@@ -7,19 +7,26 @@ header {
     .navbar-custom {
         background-color: $blue_card;
         z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Menambahkan align-items agar elemen navbar tengah secara vertikal */
 
         .navbar-brand {
+            display: flex; /* Menampilkan elemen dalam satu baris */
+            align-items: center; /* Menyatukan elemen dalam satu baris secara vertikal */
+
             img {
                 margin-bottom: 4px;
+                margin-right: 10px; /* Menambahkan margin kanan pada gambar */
             }
 
-            span {
+            span.header-text {
                 font-weight: 600;
                 color: $dark;
                 font-size: 18px;
+                white-space: nowrap; /* Menghindari pemutaran teks */
             }
         }
-
 
         .nav-link {
             color: $dark;
@@ -29,38 +36,36 @@ header {
             color: $purple;
         }
 
-
-        @media (min-width: 992px) {
-
-            .navbar-collapse {
-                margin-right: 40px;
-
-            }
-
-            .navbar-nav {
-                margin-left: 5%;
-            }
-
-            .nav-item {
-                font-size: 15px;
-                font-weight: 700;
-        }
-
         @media (max-width: 991.98px) {
             .navbar-nav {
                 margin-top: 10px;
             }
 
             .nav-item {
-
                 .btn {
                     margin-bottom: 10px;
                     margin-left: -10px;
                 }
             }
+
+            /* Pindahkan teks header ke sebelah kiri button saat layar mobile */
+            .navbar-brand {
+                align-items: flex-start; /* Geser elemen ke kiri */
+                text-align: left; /* Geser teks ke kiri */
+
+                img {
+                    margin-right: 0; /* Hapus margin kanan pada gambar */
+                }
+
+                span.header-text {
+                    margin-top: 5px;
+                    font-size: 14px; /* Ukuran font yang lebih kecil */
+                }
+            }
         }
     }
-}}
+}
+
 
 mat-sidenav-container {
     height: 100%;
