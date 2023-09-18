@@ -1,0 +1,10 @@
+$dark : #2b4150;
+.text-footer {
+    z-index: 1000000000;
+    position:fixed;
+    font-weight: 600;
+    color: $dark;
+    font-size: 12px;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,54 @@
+<div class="m-5">
+    <form [formGroup]="bookModel.FormGroupBook">
+        <div class="form-group mb-2">
+            <label class="mb-2" for="exampleInputEmail1">Book Id</label>
+            <input type="number" formControlName="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Input book id" required>
+            <div *ngIf="f['id'] && (f['id'].touched || f['id'].dirty)  &&  !f['id'].valid">
+              <div *ngIf="f['id'].errors">
+                  <div class="text-three" *ngIf="!bookModel.FormGroupBook.controls['id'].valid">
+                      <span style="color: #EB5757;">A field is required</span>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group mb-2">
+            <label class="mb-2" for="exampleInputPassword1">Book Category Id</label>
+            <input type="number" formControlName="userId"  class="form-control" id="exampleInputPassword1" placeholder="Input book category id" required>
+            <div *ngIf="f['userId'] && (f['userId'].touched || f['userId'].dirty)  &&  !f['userId'].valid">
+              <div *ngIf="f['userId'].errors">
+                  <div class="text-three" *ngIf="!bookModel.FormGroupBook.controls['userId'].valid">
+                      <span style="color: #EB5757;">A field is required</span>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group mb-2 ">
+            <label class="mb-2" for="exampleInputPassword1">Book Title</label>
+            <input type="text" formControlName="title"  class="form-control" id="exampleInputPassword1" placeholder="Input book category id" required>
+            <div *ngIf="f['title'] && (f['title'].touched || f['title'].dirty)  &&  !f['title'].valid">
+              <div *ngIf="f['title'].errors">
+                  <div class="text-three" *ngIf="!bookModel.FormGroupBook.controls['title'].valid">
+                      <span style="color: #EB5757;">A field is required</span>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group mb-2">
+            <label class="mb-2" for="exampleInputPassword1">Synopsis</label>
+            <input type="text" formControlName="body"  class="form-control" id="exampleInputPassword1" placeholder="Input book synopsis" required>
+            <div *ngIf="f['body'] && (f['body'].touched || f['body'].dirty)  &&  !f['body'].valid">
+              <div *ngIf="f['body'].errors">
+                  <div class="text-three" *ngIf="!bookModel.FormGroupBook.controls['body'].valid">
+                      <span style="color: #EB5757;">A field is required</span>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-end">
+              <button (click)="confirmBoxToCancelCreate()" class="m-2 btn btn-danger col-4">Cancel</button>
+              <button (click)="addBook()" type="submit" class="m-2 col-4 btn btn-info text-white">
+                  Save
+              </button>
+          </div>
+    </form>
+</div>

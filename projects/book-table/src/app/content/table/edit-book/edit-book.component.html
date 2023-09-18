@@ -1,0 +1,40 @@
+<div class="m-5">
+    <form [formGroup]="bookModel.FormGroupBook">
+        <div class="form-group mb-2">
+            <label class="mb-2">Book Id</label>
+            <input type="number" value="book.id" formControlName="id" class="form-control form-control-edit" readonly>
+          </div>
+          <div class="form-group mb-2">
+            <label class="mb-2">Book Category Id</label>
+            <input type="number" value="book.userId" formControlName="userId"  class="form-control form-control-edit" readonly>
+          </div>
+          <div class="form-group mb-2 ">
+            <label class="mb-2">Book Title</label>
+            <input type="text" value="book.title" formControlName="title"  class="form-control">
+            <div *ngIf="f['title'] && (f['title'].touched || f['title'].dirty)  &&  !f['title'].valid">
+              <div *ngIf="f['title'].errors">
+                  <div class="text-three" *ngIf="!bookModel.FormGroupBook.controls['title'].valid">
+                      <span style="color: #EB5757;">A field is required</span>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group mb-2">
+            <label class="mb-2">Synopsis</label>
+            <input type="text" value="book.body" formControlName="body"  class="form-control">
+            <div *ngIf="f['body'] && (f['body'].touched || f['body'].dirty)  &&  !f['body'].valid">
+              <div *ngIf="f['body'].errors">
+                  <div class="text-three" *ngIf="!bookModel.FormGroupBook.controls['body'].valid">
+                      <span style="color: #EB5757;">A field is required</span>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-end">
+              <button (click)="confirmBoxToCancelUpdate()" class="m-2 btn btn-danger col-4">Cancel</button>
+              <button (click)="editBook()" type="submit" class="m-2 col-4 btn btn-info text-white">
+                  Update
+              </button>
+          </div>
+    </form>
+</div>

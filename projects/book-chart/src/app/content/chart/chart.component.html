@@ -1,0 +1,16 @@
+<div class="row m-5">
+        <h5 class="text-title">
+            The most popular books this week
+        </h5>
+        <div class="chart-container" [style.width.px]="chartWidth" [style.height.px]="chartHeight">
+            <canvas baseChart
+                [type]="'pie'"
+                [datasets]="pieChartDatasets"
+                [labels]="pieChartLabels"
+                [options]="pieChartOptions"
+                [plugins]="pieChartPlugins"
+                [legend]="pieChartLegend">
+            </canvas>
+        </div>
+</div>
+

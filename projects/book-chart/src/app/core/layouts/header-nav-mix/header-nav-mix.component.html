@@ -1,0 +1,35 @@
+
+<header id="header">
+    <nav class="navbar navbar-custom fixed-top navbar-expand-lg py-3 justify-content-between">
+        <div class="navbar-brand">
+            <button type="button" class="btn menu-icon" (click)="opened=!opened">
+                <img src="assets/menu.svg" alt="">
+            </button>
+        </div>
+        <div class="navbar-brand" href="#">
+            <img src="../../../../assets/book-logo.png" alt="Logo" width="30" height="24" class="mt-1 d-inline-block align-text-top">
+            <span class="ms-2 header-text">Most Popular Book Recommendations</span>
+        </div>
+    </nav>
+</header>
+
+
+<mat-sidenav-container autosize>
+    <mat-sidenav mode="side" [(opened)]="opened">
+        <div class="sidebar">
+            <div class="shortcut-links fw-bold">
+                <a [routerLinkActive]="'active'" routerLink="/chart"><img src="../../../../assets/pie-chart.png" alt="">
+                    <p>Chart</p>
+                </a>
+                <a [routerLinkActive]="'active'" routerLink="/table"><img src="../../../../assets/table.png" alt="">
+                    <p>Table</p>
+                </a>
+            </div>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <main>
+            <router-outlet></router-outlet>
+        </main>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,42 @@
+<div class="row m-5">
+    <div class="col-12">
+        <h5 class="text-title mb-2 mb-4">
+            List of the most popular books this week
+        </h5>
+        <button routerLink="add-book" type="button" class="btn btn-primary text-white mb-4">
+          Add Book
+        </button>
+        <table class="table table-striped">
+            <thead>
+              <tr class="text-center">
+                <th scope="col">No</th>
+                <th style="width: 200px;" scope="col">Book Category Id</th>
+                <th scope="col">Book Title</th>
+                <th scope="col">Synopsis</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let book of books; let i = index">
+                <td>{{book.id}}</td>
+                <td>{{book.userId}}</td>
+                <td>{{book.title}}</td>
+                <td>{{book.body}}</td>
+                <td>
+                  <button routerLink="edit-book/{{book.id}}" type="button" class="btn btn-info btn-sm text-white">
+                    Edit
+                  </button>
+                </td>
+                <td>
+                  <button
+                  type="button"
+                  class="btn btn-danger btn-sm"
+                  (click)="deleteBook(book.id)"
+                >
+                  Delete
+                </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
