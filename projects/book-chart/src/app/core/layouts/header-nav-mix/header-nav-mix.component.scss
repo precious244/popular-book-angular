@@ -9,22 +9,22 @@ header {
         z-index: 10;
         display: flex;
         justify-content: space-between;
-        align-items: center; /* Menambahkan align-items agar elemen navbar tengah secara vertikal */
+        align-items: center; 
 
         .navbar-brand {
-            display: flex; /* Menampilkan elemen dalam satu baris */
-            align-items: center; /* Menyatukan elemen dalam satu baris secara vertikal */
+            display: flex; 
+            align-items: center; 
 
             img {
                 margin-bottom: 4px;
-                margin-right: 10px; /* Menambahkan margin kanan pada gambar */
+                margin-right: 10px; 
             }
 
             span.header-text {
                 font-weight: 600;
                 color: $dark;
                 font-size: 18px;
-                white-space: nowrap; /* Menghindari pemutaran teks */
+                white-space: nowrap; 
             }
         }
 
@@ -48,22 +48,47 @@ header {
                 }
             }
 
-            /* Pindahkan teks header ke sebelah kiri button saat layar mobile */
             .navbar-brand {
-                align-items: flex-start; /* Geser elemen ke kiri */
-                text-align: left; /* Geser teks ke kiri */
+                align-items: flex-start; 
+                text-align: left; 
 
                 img {
-                    margin-right: 0; /* Hapus margin kanan pada gambar */
+                    margin-right: 0; 
                 }
 
                 span.header-text {
-                    margin-top: 5px;
-                    font-size: 14px; /* Ukuran font yang lebih kecil */
+                    margin-top: 10px;
+                    font-size: 10px; 
                 }
             }
         }
     }
+
+    @media (max-width: 400px) {
+        header .navbar-custom {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    
+        header .navbar-brand {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            text-align: left;
+        }
+    
+        header .navbar-brand img {
+            margin-right: 10px;
+        }
+    
+        header .navbar-brand .header-text {
+            font-size: 14px;
+            margin-top: 0;
+        }
+    }
+    
+    
+    
 }
 
 

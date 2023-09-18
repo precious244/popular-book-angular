@@ -13,3 +13,34 @@ th {
 a {
     width: 20px;
 } 
+
+@media (max-width: 767.98px) {
+    .table-responsive {
+        overflow-x: auto;
+    }
+    .table {
+        width: 100%;
+        max-width: 100%;
+    }
+    .table thead {
+        display: none; /* Menyembunyikan header pada tampilan mobile */
+    }
+    .table td {
+        text-align: center; /* Menengahkan teks pada sel tabel */
+    }
+    .table td:nth-child(2) {
+        width: auto; /* Melebarkan kolom kedua (Book Category Id) */
+    }
+    .table td:nth-child(3) {
+        width: auto; /* Melebarkan kolom ketiga (Book Title) */
+    }
+    .table td:nth-child(4) {
+        width: auto; /* Melebarkan kolom keempat (Synopsis) */
+    }
+    .table td:last-child {
+        white-space: nowrap; /* Menghindari pemutaran teks pada kolom terakhir (Edit dan Delete) */
+    }
+    .table td button {
+        margin-bottom: 5px; /* Menambahkan margin bawah pada tombol Edit dan Delete */
+    }
+}
